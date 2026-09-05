@@ -21,6 +21,7 @@ entities:
           max: 12
   - entity: sensor
     translation_key: status
+    class: enum
     icon: "mdi:paw"
     dps:
       - id: 4

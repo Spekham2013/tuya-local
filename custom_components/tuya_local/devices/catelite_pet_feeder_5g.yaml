@@ -1,0 +1,69 @@
+name: Pet feeder
+products:
+  - id: drfffce9jdtayqty
+    manufacturer: Catelite
+    model: Pet Feeder 5G
+entities:
+  - entity: switch
+    dps:
+      - id: 20
+        type: boolean
+        name: switch
+  - entity: number
+    translation_key: manual_feed
+    dps:
+      - id: 3
+        type: integer
+        name: value
+        unit: portions
+        range:
+          min: 1
+          max: 12
+  - entity: sensor
+    translation_key: status
+    icon: "mdi:paw"
+    dps:
+      - id: 4
+        type: string
+        name: sensor
+        mapping:
+          - dps_val: standby
+            value: standby
+          - dps_val: feeding
+            value: feeding
+          - dps_val: done
+            value: feeding_complete
+  - entity: sensor
+    class: battery
+    category: diagnostic
+    dps:
+      - id: 11
+        type: integer
+        name: sensor
+        unit: "%"
+        class: measurement
+  - entity: event
+    name: Feed report
+    dps:
+      - id: 15
+        type: integer
+        optional: true
+        name: event
+        mapping:
+          - dps_val: null
+            value: null
+          - dps_val: 0
+            value: null
+          - value: fed
+      - id: 15
+        type: integer
+        optional: true
+        name: portions
+  - entity: switch
+    name: Slow feed
+    icon: "mdi:speedometer-slow"
+    category: config
+    dps:
+      - id: 23
+        type: boolean
+        name: switch

@@ -1,7 +1,7 @@
 name: Pet feeder
 products:
   - id: drfffce9jdtayqty
-    manufacturer: Catelite
+    manufacturer: CatElite
     model: Pet Feeder 5G
 entities:
   - entity: switch
